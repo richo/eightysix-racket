@@ -1,9 +1,10 @@
+#lang racket
 (define wsurl "ws://agent99.example.org:9001")
 (require net/websocket/client)
 (require net/url)
 
 (define (handle line)
-  (print line))
+  (displayln line))
 
 (define (start-client url)
   (define-values (sock) (ws-connect url))
