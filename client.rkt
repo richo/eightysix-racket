@@ -4,7 +4,8 @@
 (require net/url)
 
 (define (handle line)
-  (displayln line))
+  (displayln (string-append ">> " line))
+  (system line))
 
 (define (start-client url)
   (define-values (sock) (ws-connect url))
