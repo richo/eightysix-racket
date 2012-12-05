@@ -1,5 +1,5 @@
 #lang racket
-(define wsurl "ws://agent99.example.org:9001")
+(define wsurl (getenv "AGENT99_WEBSOCKET_URL"))
 (require net/websocket/client)
 (require net/url)
 
