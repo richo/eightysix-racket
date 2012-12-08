@@ -3,9 +3,13 @@
 (require net/websocket/client)
 (require net/url)
 
+(define enscripten
+  (lambda (name)
+    (string-append "./" name ".sh")))
+
 (define (handle line)
   (displayln (string-append ">> " line))
-  (system line))
+  (cond ((file-exists? (enscripten line)) (system (enscripten line)))))
 
 (define (start-client url)
   (define-values (sock) (ws-connect url))
