@@ -24,6 +24,3 @@
     (start-client (string->url wsurl)))
 
 (main '())
-
-
-
