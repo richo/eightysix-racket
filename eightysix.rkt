@@ -1,5 +1,9 @@
 #lang racket
 (define wsurl (getenv "AGENT99_WEBSOCKET_URL"))
+(cond ((not wsurl)
+    (displayln "undefined environment variable AGENT99_WEBSOCKET_URL")
+    (exit 1)))
+
 (require net/websocket/client)
 (require net/url)
 
