@@ -17,17 +17,11 @@
     (let ((line (ws-recv sock)))
       (if (eof-object? line)
           (exit)
-          (handle line)
-      )
-
-    )
-  (mainloop)
-)
-)
+          (handle line)))
+  (mainloop)))
 
 (define (main argv)
-    (start-client (string->url wsurl))
-)
+    (start-client (string->url wsurl)))
 
 (main '())
 
